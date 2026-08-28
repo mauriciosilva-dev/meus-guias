@@ -1,0 +1,171 @@
+==================================================
+         MEU GUIA DE COMANDOS GIT
+         Criado em: 2026
+==================================================
+
+📍 NAVEGAÇÃO BÁSICA
+--------------------------------------------------
+pwd                 - Mostra onde estou
+ls                  - Lista arquivos/pastas
+ls -la              - Lista tudo (incluindo ocultos)
+cd pasta            - Entra na pasta
+cd ..               - Volta uma pasta
+cd ~                - Vai para pasta do usuário
+cd -                - Volta para última pasta
+TAB                 - Autocompleta nomes
+
+🎯 CONFIGURAÇÃO INICIAL (primeira vez)
+--------------------------------------------------
+git config --global user.name "Seu Nome"
+git config --global user.email "seu@email.com"
+git config --list   - Mostra configurações
+
+📦 CRIAR REPOSITÓRIO
+--------------------------------------------------
+git init            - Inicia repositório na pasta atual
+
+ CLONAR DO GITHUB
+--------------------------------------------------
+git clone git@github.com:usuario/repo.git
+git clone https://github.com/usuario/repo.git
+
+📊 VERIFICAR STATUS
+--------------------------------------------------
+git status          - Mostra o que mudou
+git status -s       - Status resumido
+
+👀 VER DIFERENÇAS
+--------------------------------------------------
+git diff            - Mostra alterações nos arquivos
+git diff --staged   - Mostra o que será commitado
+
+✅ ADICIONAR ARQUIVOS
+--------------------------------------------------
+git add arquivo.txt - Adiciona um arquivo específico
+git add .           - Adiciona todos os arquivos
+git add *.js        - Adiciona todos os arquivos .js
+
+💾 SALVAR ALTERAÇÕES (COMMIT)
+--------------------------------------------------
+git commit -m "mensagem"     - Commit com mensagem
+git commit                   - Abre editor para mensagem
+git commit --amend           - Corrige último commit
+
+📤 ENVIAR PARA GITHUB
+--------------------------------------------------
+git push                     - Envia commits
+git push origin main         - Envia para branch main
+git push -u origin main      - Primeira vez (cria vínculo)
+
+ BAIXAR DO GITHUB
+--------------------------------------------------
+git pull                     - Baixa e mescla alterações
+git pull origin main         - Baixa da branch main
+git fetch                    - Baixa sem mesclar
+
+🔗 CONECTAR REMOTO
+--------------------------------------------------
+git remote add origin git@github.com:usuario/repo.git
+git remote -v                - Mostra remotos conectados
+git remote remove origin     - Remove remoto
+
+🌿 BRANCHES (RAMIFICAÇÕES)
+--------------------------------------------------
+git branch                   - Lista branches
+git branch nome-branch       - Cria nova branch
+git checkout nome-branch     - Muda para branch
+git checkout -b nova-branch  - Cria e muda (atalho)
+git merge nome-branch        - Mescla branch na atual
+
+ HISTÓRICO
+--------------------------------------------------
+git log                      - Histórico completo
+git log --oneline            - Histórico resumido
+git log -3                   - Últimos 3 commits
+
+ DESFAZER
+--------------------------------------------------
+git restore arquivo.txt      - Descarta alterações no arquivo
+git restore --staged arquivo - Remove do stage
+git reset HEAD~1             - Volta 1 commit (mantém arquivos)
+git reset --hard HEAD~1      - Volta 1 commit (apaga tudo)
+
+ ARQUIVOS IMPORTANTES
+--------------------------------------------------
+.gitignore          - Arquivos/pastas para ignorar
+README.md           - Documentação do projeto
+LICENSE             - Licença do projeto
+
+🔑 CHAVE SSH
+--------------------------------------------------
+ssh-keygen -t ed25519 -C "email@exemplo.com"
+cat ~/.ssh/id_ed25519.pub    - Copiar chave pública
+ssh -T git@github.com        - Testar conexão
+
+⚡ COMANDOS ÚTEIS
+--------------------------------------------------
+git stash                    - Guarda alterações temporariamente
+git stash pop                - Recupera alterações guardadas
+git clean -fd                - Remove arquivos não rastreados
+git tag v1.0                 - Cria tag de versão
+
+==================================================
+         FLUXO DE TRABALHO DIÁRIO
+==================================================
+
+1️⃣ ANTES DE COMEÇAR:
+   git pull origin main
+
+2️⃣ TRABALHAR NOS ARQUIVOS...
+
+3️ VERIFICAR O QUE MUDOU:
+   git status
+   git diff
+
+4️ ADICIONAR ALTERAÇÕES:
+   git add .
+
+5️ SALVAR:
+   git commit -m "mensagem clara"
+
+6️⃣ ENVIAR:
+   git push
+
+==================================================
+         MENSAGENS DE COMMIT BOAS
+==================================================
+
+✅ BOAS:
+- "Adiciona tela de login"
+- "Corrige erro no cálculo de total"
+- "Atualiza documentação do README"
+- "Remove arquivos temporários"
+
+❌ RUINS:
+- "arrumando coisa"
+- "teste"
+- "ajustes"
+- "asdfasdf"
+
+==================================================
+         DICAS IMPORTANTES
+==================================================
+
+1. SEMPRE faça pull antes de começar a trabalhar
+2. Commits pequenos e frequentes são melhores
+3. Mensagens de commit devem ser claras e objetivas
+4. Use .gitignore para não subir arquivos desnecessários
+5. Nunca suba senhas, chaves API ou dados sensíveis
+6. Teste seu código antes de fazer commit
+7. Use branches para funcionalidades novas
+
+==================================================
+         EM CASO DE ERROS
+==================================================
+
+- "Permission denied": Verifique se a chave SSH está configurada
+- "Conflict": Faça pull e resolva os conflitos manualmente
+- "Nothing to commit": Não há alterações para salvar
+- "Branch already exists": A branch já existe no remoto
+
+==================================================
